@@ -59,6 +59,7 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: ASWINTH T
 RegisterNumber:  212222230015
 */
+### Upcounter
 ```
 module proj6counters(D,C,B,A,clk);
 output reg D,C,B,A;
@@ -73,17 +74,44 @@ end
 endmodule
 ```
 
+### Down Counter
+
+```
+module downcounter(clk,a);
+input clk;
+output reg[3:0]a;
+always@(posedge clk)
+begin
+a[3]=(~a[2] & ~a[1] & ~a[0])^ a[3];
+a[2]=(~a[1] & ~a[0]) ^ a[2];
+a[1]=(~a[0] ^ a[1]);
+a[0]=1 ^ a[0];
+end
+endmodule
+```
+
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 ### RTL LOGIC UP COUNTER
 ![Screenshot 2023-10-20 091232](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/76046079-4629-4ac3-b23f-9b4b04d0b865)
-### RTL LOGIC DOWN COUNTER  
+### RTL LOGIC DOWN COUNTER 
+![image](https://github.com/Aswinth21/Exp-7-Synchornous-counters-/assets/120236638/25154d6e-e148-42cd-a3f7-f9fb817a35a8)
+
+
+
 
 ### TIMING DIGRAMS FOR COUNTER  
 ### UP COUNTER
 ![Screenshot 2023-10-20 091200](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/d7771fc3-be6b-4694-8675-f5b16fad862c)
 ### DOWN COUNTER
+![image](https://github.com/Aswinth21/Exp-7-Synchornous-counters-/assets/120236638/a6e19ee6-5773-44d4-a7af-780e4b2fd32f)
 
 ### TRUTH TABLE 
+### UPCOUNTER
+![image](https://github.com/Aswinth21/Exp-7-Synchornous-counters-/assets/120236638/8d7ebd90-76a3-4eaa-a43a-ad4b65e6172d)
+
+### DOWN COUNTER
+![image](https://github.com/Aswinth21/Exp-7-Synchornous-counters-/assets/120236638/d481a014-b439-41de-b0fd-54325b43f969)
+
 
 
 
